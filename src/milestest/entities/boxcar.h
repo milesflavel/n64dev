@@ -1,6 +1,7 @@
 // Structure of box
 typedef struct
 {
+    void (*control)();
     void (*move)();
     void (*render)();
 
@@ -10,8 +11,9 @@ typedef struct
     int ySize;
 
     float velocity;
+    float velocityMax;
     float direction;
     float turnAngle;
-} box;
+} boxcar;
 
-box* Box(int _xPos, int _yPos, int _xSize, int _ySize);
+boxcar* BoxCar(int _xPos, int _yPos, int _xSize, int _ySize);

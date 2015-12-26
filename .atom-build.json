@@ -1,0 +1,7 @@
+{
+  "cmd": "make",
+  "cwd": "{PROJECT_PATH}",
+  "env": {
+    "N64_INST": "/usr/local"
+  }
+}
