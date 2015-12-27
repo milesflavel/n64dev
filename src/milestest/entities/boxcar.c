@@ -39,7 +39,7 @@ void renderBoxCar(boxcar* _box)
 }
 
 // Constructor method
-boxcar* BoxCar(int _xPos, int _yPos, int _xSize, int _ySize)
+boxcar* newBoxCar(int _xPos, int _yPos, int _xSize, int _ySize)
 {
     // Allocate space in memory
     boxcar* boxPtr = malloc(sizeof(boxcar));

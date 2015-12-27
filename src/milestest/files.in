@@ -1,2 +1,6 @@
+// THIS IS ONLY TEMPORARY!
+// SORT OUT MAKEFILE SO THAT THIS ISN'T NEEDED
+
 #include "entities/box.c"
 #include "entities/boxcar.c"
+#include "entities/entity.c" //Entity must be included after specific entities due to scope

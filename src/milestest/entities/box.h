@@ -14,4 +14,4 @@ typedef struct
     float turnAngle;
 } box;
 
-box* Box(int _xPos, int _yPos, int _xSize, int _ySize);
+box* newBox(int _xPos, int _yPos, int _xSize, int _ySize);

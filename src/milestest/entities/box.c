@@ -17,7 +17,7 @@ void renderBox(box* _box)
 }
 
 // Constructor method (Must come after other methods due to scope constraints)
-box* Box(int _xPos, int _yPos, int _xSize, int _ySize)
+box* newBox(int _xPos, int _yPos, int _xSize, int _ySize)
 {
     // Allocate space in memory
     box* boxPtr = malloc(sizeof(box));

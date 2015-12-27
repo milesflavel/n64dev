@@ -19,24 +19,20 @@ void init()
     timer_init();
 }
 
-typedef struct
-{
-    void (*control)();
-    void (*move)();
-    void (*render)();
-} entity;
-
 int main(void)
 {
     init();
 
-    box* boxOne = Box(150, 100, 20, 20);
-    boxcar* boxTwo = BoxCar(100, 120, 10, 10);
+    //box* boxOne = newBox(150, 100, 20, 20);
+    //boxcar* boxTwo = newBoxCar(100, 120, 10, 10);
 
-    //int entitiesCount = 2;
-    //void* entities[entitiesCount];
-    //entities[0] = boxOne;
-    //entities[1] = boxTwo;
+    entity* entOne = newEntity(BOX, newBox(150, 100, 20, 20));
+    entity* entTwo = newEntity(BOXCAR, newBoxCar(100, 120, 10, 10));
+
+    int entitiesCount = 2;
+    entity* entities[entitiesCount];
+    entities[0] = entOne;
+    entities[1] = entTwo;
 
     char directionst[3];
 
@@ -71,22 +67,13 @@ int main(void)
 
         rdp_enable_primitive_fill();
 
-        /*
         for(int ent=0; ent<entitiesCount; ent++)
         {
-            entities[ent]->move(entities[ent]);
+            entities[ent]->doLogic(entities[ent]);
             entities[ent]->render(entities[ent]);
         }
-        */
 
-        boxOne->move(boxOne);
-        boxOne->render(boxOne);
-        boxTwo->control(boxTwo);
-        boxTwo->move(boxTwo);
-        boxTwo->render(boxTwo);
-
-
-        sprintf(directionst, "%f", boxTwo->turnAngle);
+        //sprintf(directionst, "%f", boxTwo->turnAngle);
 
         /* Inform the RDP we are finished drawing and that any pending operations should be flushed */
         rdp_detach_display();

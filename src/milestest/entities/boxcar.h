@@ -16,4 +16,4 @@ typedef struct
     float turnAngle;
 } boxcar;
 
-boxcar* BoxCar(int _xPos, int _yPos, int _xSize, int _ySize);
+boxcar* newBoxCar(int _xPos, int _yPos, int _xSize, int _ySize);
