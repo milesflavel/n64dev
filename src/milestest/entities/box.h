@@ -4,8 +4,8 @@ typedef struct
     void (*move)();
     void (*render)();
 
-    double xPos;
-    double yPos;
+    float xPos;
+    float yPos;
     int xSize;
     int ySize;
 

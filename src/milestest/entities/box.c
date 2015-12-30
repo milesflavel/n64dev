@@ -27,8 +27,8 @@ box* newBox(int _xPos, int _yPos, int _xSize, int _ySize)
     boxPtr->render = renderBox;
 
     // Initialise variables
-    boxPtr->xPos = _xPos;
-    boxPtr->yPos = _yPos;
+    boxPtr->xPos = (float)_xPos;
+    boxPtr->yPos = (float)_yPos;
     boxPtr->xSize = _xSize;
     boxPtr->ySize = _ySize;
 

@@ -60,20 +60,20 @@ int main(void)
         /* Remove any clipping windows */
         rdp_set_default_clipping();
 
-        graphics_draw_text( disp, 100, 20, directionst );
-
         /* Attach RDP to display */
         rdp_attach_display( disp );
 
         rdp_enable_primitive_fill();
 
-        for(int ent=0; ent<entitiesCount; ent++)
+        for(int e=0; e<entitiesCount; e++)
         {
-            entities[ent]->doLogic(entities[ent]);
-            entities[ent]->render(entities[ent]);
+            entities[e]->doLogic(entities[e]);
+            entities[e]->render(entities[e]);
         }
 
-        //sprintf(directionst, "%f", boxTwo->turnAngle);
+        boxcar* bc = entities[1]->data;
+        sprintf(directionst, "%f", bc->debugval);
+        graphics_draw_text( disp, 100, 20, directionst );
 
         /* Inform the RDP we are finished drawing and that any pending operations should be flushed */
         rdp_detach_display();
